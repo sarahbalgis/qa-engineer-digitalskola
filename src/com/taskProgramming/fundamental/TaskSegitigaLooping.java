@@ -1,5 +1,7 @@
 package com.taskProgramming.fundamental;
 
+import java.util.Scanner;
+
 public class TaskSegitigaLooping {
 
     public static void main(String[] args) {
@@ -9,16 +11,21 @@ public class TaskSegitigaLooping {
         System.out.println("Nama: Siti Sarah Balgis");
         System.out.print("\n");
 
-        int baris = 10;
-        int barisTengah = (baris + 1) / 2;
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Masukkan tinggi segitiga: ");
+        int tinggi = scanner.nextInt();
 
-        for (int i = 1; i <= baris; i++) {
-            int maxX = (i <= barisTengah) ? i : baris - i + 1;
+        int barisTengah = (tinggi + 1) / 2;
+
+        for (int i = 1; i <= tinggi; i++) {
+            int maxX = (i <= barisTengah) ? i : tinggi - i + 1;
 
             for (int j = 1; j <= maxX; j++) {
                 System.out.print("x ");
             }
             System.out.println();
         }
+
+        scanner.close();
     }
 }
