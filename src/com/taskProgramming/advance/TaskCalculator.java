@@ -19,34 +19,35 @@ public class TaskCalculator {
         System.out.print("Masukkan Angka Kedua: ");
         double num2 = scanner.nextDouble();
 
-        System.out.print("Masukkan Operator (+, -, *, /, %): ");
-        char operator = scanner.next().charAt(0);
+        char operator;
 
-        double result = 0;
+        do {
+            System.out.print("Masukkan Operator (+, -, *, /, %): ");
+            operator = scanner.next().charAt(0);
 
-        switch (operator) {
-            case '+':
-                result = calculator.add(num1, num2);
-                break;
-            case '-':
-                result = calculator.subtract(num1, num2);
-                break;
-            case '*':
-                result = calculator.multiply(num1, num2);
-                break;
-            case '/':
-                result = calculator.divide(num1, num2);
-                break;
-            case '%':
-                result = calculator.modulus(num1, num2);
-                break;
-            default:
-                System.out.println("Invalid Operator");
-                return;
-        }
+            switch (operator) {
+                case '+':
+                    num1 = calculator.add(num1, num2);
+                    break;
+                case '-':
+                    num1 = calculator.subtract(num1, num2);
+                    break;
+                case '*':
+                    num1 = calculator.multiply(num1, num2);
+                    break;
+                case '/':
+                    num1 = calculator.divide(num1, num2);
+                    break;
+                case '%':
+                    num1 = calculator.modulus(num1, num2);
+                    break;
+                default:
+                    System.out.println("Error: Invalid Operator, Silakan masukkan kembali.");
+                    System.out.print("\n");
+            }
+        } while (operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%');
 
-        System.out.println("Hasil: " + result);
+        System.out.println("Hasil: " + num1);
+
     }
-
 }
-
