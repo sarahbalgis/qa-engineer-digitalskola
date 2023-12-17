@@ -35,7 +35,6 @@ public class TaskSegitigaLooping {
             System.out.println();
         }
 
-        // Tutup scanner setelah digunakan
         scanner.close();
     }
 }
