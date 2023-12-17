@@ -12,8 +12,17 @@ public class TaskSegitigaLooping {
         System.out.print("\n");
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Masukkan tinggi segitiga: ");
-        int tinggi = scanner.nextInt();
+
+        int tinggi;
+        do {
+            System.out.print("Masukkan tinggi segitiga (Minimal 3): ");
+            tinggi = scanner.nextInt();
+
+            if (tinggi < 3) {
+                System.out.println("Error: Tinggi segitiga harus minimal 3. Silakan masukkan kembali.");
+                System.out.print("\n");
+            }
+        } while (tinggi < 3);
 
         int barisTengah = (tinggi + 1) / 2;
 
@@ -26,6 +35,7 @@ public class TaskSegitigaLooping {
             System.out.println();
         }
 
+        // Tutup scanner setelah digunakan
         scanner.close();
     }
 }
